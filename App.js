@@ -1,21 +1,24 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
+import LandingPage from './src/screens/LandingPage';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+const navigator = createStackNavigator(
+  {
+    Landing: LandingPage,
   },
-});
+  {
+    initialRouteParams: 'Home',
+    defaultNavigationOptions: {
+      title: "Whats For Dinner?",
+    },
+  }
+);
+
+export default createAppContainer(navigator);
+
+// Client ID
+//Stbump_8oTuq2efEDya1Fg
+
+//API Key
+//3Yco9sGiJ4ZEXsTUpkJ6YAauUWi81QIKmPPZn7VqVjzdUDhARW0P_gH0_QM4DzE1LRTwm_pHGAeFVMwy5oN45lQZ41ft92agK03W0q2kVawGRZIqW_3XqDfX0meHYHYx
