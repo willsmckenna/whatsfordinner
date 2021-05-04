@@ -14,10 +14,11 @@ const LandingPage = () => {
             const response = await yelp.get('/search', {
                 params: {
                     limit: 50,
-                    category: searchTerm,
+                    term: searchTerm,
                     location: 'chicago'
                 }
             });
+        
         setResults(response.data.businesses);
         } catch (err) {
             setErrorMsg('Something went wrong')
@@ -37,7 +38,7 @@ const LandingPage = () => {
                 onTermChange={setTerm}
                 onTermSubmit={() => searchYelpApi(term)}
             />
-            <Text>we have found {results.length} restaurants</Text>
+            <Text>we have found {results.length} {term} restaurants</Text>
             {errorMsg ? <Text>{errorMsg}</Text> : null}
             <ResultsList resultsToDisplay={results}/>
         </View>
