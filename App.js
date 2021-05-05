@@ -1,11 +1,11 @@
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
-import LandingPage from './src/screens/LandingPage';
+import SearchPage from './src/screens/SearchPage';
 
 
 const navigator = createStackNavigator(
   {
-    Landing: LandingPage,
+    Search: SearchPage,
   },
   {
     initialRouteParams: 'Home',
