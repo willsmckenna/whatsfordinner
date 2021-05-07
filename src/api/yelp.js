@@ -1,8 +1,9 @@
 import axios from 'axios';
+import { YELP_API_KEY } from '@env';
 
 export default axios.create({
     baseURL: 'https://api.yelp.com/v3/businesses',
     headers: {
-        Authorization:'Bearer 3Yco9sGiJ4ZEXsTUpkJ6YAauUWi81QIKmPPZn7VqVjzdUDhARW0P_gH0_QM4DzE1LRTwm_pHGAeFVMwy5oN45lQZ41ft92agK03W0q2kVawGRZIqW_3XqDfX0meHYHYx'
+        Authorization:`Bearer ${YELP_API_KEY}`
     }
 });
