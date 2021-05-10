@@ -17,10 +17,11 @@ const TestSignUpPage = () => {
                 const uid = response.user.uid
                 const data = {
                     id: uid,
+                    username,
                     email,
-                    preferences: preferencesList
+                    preferences: preferencesList,
+                    restaurantsWentTo: []
                 }
-                console.log(data);
                 const usersRef = firebase.firestore().collection('users');
                 usersRef
                     .doc(uid)
@@ -37,7 +38,7 @@ const TestSignUpPage = () => {
     return (
         <View>
             <TextInput
-                placeholder='Full Name'
+                placeholder='username'
                 value={username}
                 onChangeText={(text) => setUsername(text)}
                 autoCapitalize='none'
@@ -55,7 +56,7 @@ const TestSignUpPage = () => {
                 autoCapitalize='none'
             />
             <TextInput
-                placeholder='Enter favorite food(s):'
+                placeholder='Enter favorite food(s) or cuisine(s) [seperated by commas]:'
                 value={preferences}
                 onChangeText={(text) => setPreferences(text)}
                 autoCapitalize='none'
