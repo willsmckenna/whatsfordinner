@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, FlatList, Text, StyleSheet, Image } from 'react-native';
+import { View, FlatList, Text, StyleSheet, Image, Touchable, TouchableOpacity} from 'react-native';
+import { Feather } from '@expo/vector-icons';
 
 const ResultsList = ({ resultsToDisplay }) => {
     return (
@@ -9,10 +10,13 @@ const ResultsList = ({ resultsToDisplay }) => {
                 data={resultsToDisplay}
                 renderItem={({ item }) => {
                     return (
+                        <TouchableOpacity>
                         <View style={styles.item}>
-                            <Image source={{width: 50, height: 50, uri: item.image_url}}/>
-                            <Text> {item.name} - {item.rating} stars </Text>
+                            <Image source={{width: 75, height: 75, uri: item.image_url}}/>
+                            <Text style={styles.restaurantTitle}> {item.name} - {item.rating} stars </Text>
+                            <Text><Feather name="map-pin"/> {item.location.city}, {item.location.state} </Text>
                         </View>
+                        </TouchableOpacity>
                     );
                 }}
             />
@@ -21,10 +25,16 @@ const ResultsList = ({ resultsToDisplay }) => {
 }
 
 const styles = StyleSheet.create({
+    restaurantTitle:{
+        fontSize: 16,
+        fontWeight: "bold"
+    },
 item:{
     backgroundColor: "white",
     padding: 15,
-    marginBottom: 10
+    marginBottom: 15,
+    borderRadius: 5,
+        marginHorizontal: 15
 }
 });
 export default ResultsList;

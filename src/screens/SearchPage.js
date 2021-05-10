@@ -16,7 +16,7 @@ const SearchPage = () => {
                 onTermChange={setTerm}
                 onTermSubmit={() => searchYelpApi(term)}
             />
-            <Text>we have found {results.length} restaurants</Text>
+            <Text style={styles.resultTitle}>Results {results.length} restaurants</Text>
             {errorMsg ? <Text>{errorMsg}</Text> : null}
             <ResultsList resultsToDisplay={results}/>
         </View>
@@ -27,8 +27,16 @@ const styles = StyleSheet.create({
 headingText:{
     position: "relative",
     textAlign:"center",
-    paddingTop: 100,
-    fontSize: 24
+    paddingTop: 50,
+    fontSize: 24,
+    fontWeight: "bold",
+    marginHorizontal: 15
+},
+resultTitle:{
+fontSize: 16,
+marginHorizontal: 15,
+marginTop: 15,
+marginBottom: 15
 }
 });
 
