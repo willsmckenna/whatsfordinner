@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
         alignSelf: "stretch"
     },
     restaurantTitle:{
-        fontSize: 16,
+        fontSize: 15,
         fontWeight: "bold",
         marginHorizontal: 15,
         flexGrow: 1,
@@ -63,7 +63,6 @@ item:{
     marginBottom: 15,
     borderRadius: 5,
     marginHorizontal: 15,
-    borderRadius: 2,
     flex: 1,
     flexDirection: "row", // main axis
     justifyContent: "flex-start", // main axis

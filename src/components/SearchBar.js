@@ -10,7 +10,7 @@ const SearchBar = ({ term, onTermChange, onTermSubmit }) => {
                 autoCapitalize="none"
                 autoCorrect={false}
                 style={styles.inputStyle} 
-                placeholder="Search"
+                placeholder="Ex: Chewba Hut, Chicago IL"
                 value={term}
                 onChangeText={onTermChange}
                 onEndEditing={onTermSubmit}
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
         fontSize: 18
     },
     iconStyle: {
-        fontSize: 35,
+        fontSize: 20,
         alignSelf: 'center',
         marginHorizontal: 10
     }

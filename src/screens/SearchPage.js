@@ -16,7 +16,7 @@ const SearchPage = () => {
                 onTermChange={setTerm}
                 onTermSubmit={() => searchYelpApi(term)}
             />
-            <Text style={styles.resultTitle}>Results {results.length} restaurants</Text>
+            <Text style={styles.resultTitle}>Results - {results.length} restaurants</Text>
             {errorMsg ? <Text>{errorMsg}</Text> : null}
             <ResultsList resultsToDisplay={results}/>
         </View>
