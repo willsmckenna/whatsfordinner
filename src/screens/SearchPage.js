@@ -10,7 +10,7 @@ const SearchPage = () => {
     
     return (
         <View>
-            <Text>What's For Dinner Landing Page!</Text>
+            <Text style={styles.headingText}>What kind of food sounds good to you right now? </Text>
             <SearchBar 
                 term={term} 
                 onTermChange={setTerm}
@@ -23,6 +23,13 @@ const SearchPage = () => {
     );
 }
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+headingText:{
+    position: "relative",
+    textAlign:"center",
+    paddingTop: 100,
+    fontSize: 24
+}
+});
 
 export default SearchPage;
