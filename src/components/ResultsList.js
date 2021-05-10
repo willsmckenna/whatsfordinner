@@ -15,7 +15,7 @@ const ResultsList = ({ resultsToDisplay }) => {
                         <TouchableOpacity>
                         <View style={styles.item}>
                             <Image style={styles.thumbnail} source={{width: 75, height: 75, uri: item.image_url}}/>
-                            <Text style={styles.restaurantTitle}> {item.name}</Text>
+                            <Text style={styles.restaurantTitle}> {item.name} {"\n"} <Text style={styles.smallText}><Feather name="check-circle"/> You've been here before!</Text> </Text>
                             <View style={styles.info}>
                             <Text>{item.rating} stars</Text>
                             <Text><Feather name="map-pin"/> {item.location.city}, {item.location.state} </Text>
@@ -45,6 +45,11 @@ const styles = StyleSheet.create({
         paddingLeft: 5,
         paddingBottom: 0,
         width: 100
+    },
+    smallText:{
+        fontSize: 12,
+        fontWeight: "normal",
+        color: "#FF6347"
     },
     info:{
        paddingRight: 15
