@@ -6,8 +6,8 @@ import LoginPage from './src/screens/LoginPage'
 
 const navigator = createStackNavigator(
   {
-    Login: LoginPage,
     Search: SearchPage,
+    Login: LoginPage
   },
   {
     initialRouteParams: 'Home',

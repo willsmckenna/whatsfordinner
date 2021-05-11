@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, FlatList } from 'react-native';
+import { View, Text, StyleSheet, FlatList, Button } from 'react-native';
 import SearchBar from '../components/SearchBar';
 import ResultsList from '../components/ResultsList';
 import useYelpResults from '../hooks/useYelpResults';
 
-const SearchPage = () => {
+const SearchPage = ({ navigation }) => {
     const [term, setTerm ] = useState(' ')
     const [searchYelpApi, results, errorMsg] = useYelpResults();
     
     return (
         <View>
+            <Button title="Signup" onPress={() => navigation.navigate('Login')}/>
             <Text style={styles.headingText}>What kind of food sounds good to you right now? </Text>
             <SearchBar 
                 term={term} 
