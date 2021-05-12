@@ -18,6 +18,7 @@ jobs:
       node_js: lts/*
       script:
         - npm install -g @aws-amplify/cli
+        - amplify init --app git@github.com:willsmckenna/whatsfordinner.git
         - amplify push
         - amplify publish -y
         #- npm ci
