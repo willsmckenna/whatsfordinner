@@ -17,6 +17,9 @@ jobs:
     - stage: deploy
       node_js: lts/*
       script:
-        - npm ci
-        - npx expo login -u wmckenn1 -p $EXPO_CLI_PASSWORD
-        - npx expo publish --non-interactive
+        - npm install -g @aws-amplify/cli
+        - amplify push
+        - amplify publish -y
+        #- npm ci
+        #- npx expo login -u wmckenn1 -p $EXPO_CLI_PASSWORD
+        #- npx expo publish --non-interactive
