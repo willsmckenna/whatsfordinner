@@ -29,9 +29,10 @@ jobs:
           \"accessKeyId\":$AWS_ACCESS_KEY_ID,\
           \"secretAccessKey\":$AWS_ACCESS_KEY,\
           \"region\":\"us-east-1\" \
-          \}"
+          \}"\
+          --yes
         - amplify push
-        - amplify publish -y
+        - amplify publish -yes
         #- npm ci
         #- npx expo login -u wmckenn1 -p $EXPO_CLI_PASSWORD
         #- npx expo publish --non-interactive
