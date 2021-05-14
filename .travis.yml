@@ -23,7 +23,10 @@ jobs:
         - npm install -g @aws-amplify/cli
         - amplify init \
           --app https://github.com/willsmckenna/whatsfordinner.git \
-          --amplify "{\"envName\":\"dev\"}" \
+          --amplify "{\
+          \"envName\":\"dev\",\
+          \"projectName\":\"whatsfordinner\"\
+          \}"\
           --providers "{\
           \"useProfile\":false,\
           \"accessKeyId\":$AWS_ACCESS_KEY_ID,\
