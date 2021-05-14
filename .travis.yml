@@ -21,7 +21,15 @@ jobs:
         - cd project
         - npm install
         - npm install -g @aws-amplify/cli
-        - amplify init -y --app https://github.com/willsmckenna/whatsfordinner.git
+        - amplify init \
+          --app https://github.com/willsmckenna/whatsfordinner.git \
+          --amplify "{\"envName\":\"dev\"}" \
+          --providers "{\
+          \"useProfile\":false,\
+          \"accessKeyId\":$AWS_ACCESS_KEY_ID,\
+          \"secretAccessKey\":$AWS_ACCESS_KEY,\
+          \"region\":\"us-east-1\" \
+          \}"
         - amplify push
         - amplify publish -y
         #- npm ci
