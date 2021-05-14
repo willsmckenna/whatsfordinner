@@ -24,8 +24,9 @@ jobs:
         - amplify init \
           --app https://github.com/willsmckenna/whatsfordinner.git \
           --amplify "{\
-          \"envName\":\"dev\",\
           \"projectName\":\"whatsfordinner\"\
+          \"envName\":\"dev\",\
+          \”defaultEditor\”:\”code\”\
           \}"\
           --providers "{\
           \"useProfile\":false,\
