@@ -21,20 +21,11 @@ jobs:
         - cd project
         - npm install
         - npm install -g @aws-amplify/cli
-        - amplify init \
-          --app https://github.com/willsmckenna/whatsfordinner.git \
-          --amplify "{\
-          \"projectName\":\"whatsfordinner\"\
-          \"envName\":\"dev\",\
-          \”defaultEditor\”:\”code\”\
-          \}"\
-          --providers "{\
-          \"useProfile\":false,\
-          \"accessKeyId\":$AWS_ACCESS_KEY_ID,\
-          \"secretAccessKey\":$AWS_ACCESS_KEY,\
-          \"region\":\"us-east-1\" \
-          \}"\
-          --yes
+        - amplify init --app https://github.com/willsmckenna/whatsfordinner.git \
+        --amplify "{\"projectName\":\"whatsfordinner\",\"envName\":\"dev\",\”defaultEditor\”:\”code\”}"\
+        --frontend"{\"frontend\":\"javascript\",\"framework\":\"react\",\"config\":"{\"SourceDir\":\"src\",\"DistributionDir\":\"build\",\"BuildCommand\":\"expo build:ios\",\"StartCommand\":\"npm start\"}\
+        --providers"{\"useProfile\":false,\"profileName\":\"default\",\"accessKeyId\":$AWS_ACCESS_KEY_ID,\"secretAccessKey\":$AWS_ACCESS_KEY,\"region\":\"us-east-1\"}"\
+        --yes
         - amplify push
         - amplify publish -yes
         #- npm ci
