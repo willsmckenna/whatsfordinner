@@ -16,10 +16,10 @@ export default () => {
                     location: 'chicago'
                 }
             });
-            if (randSearchList.includes(searchTerm)){
+            if (randSearchList.includes(searchTerm)) {
                 //pick 20 at random
                 setResults(response.data.businesses.sort(() => 0.5 - Math.random()).slice(0, 20));
-            } else{
+            } else {
                 setResults(response.data.businesses.slice(0, 20));
             }
         } catch (err) {
@@ -33,5 +33,6 @@ export default () => {
         searchYelpApi(randSearchTerm);
     }, []);
 
+    console.log(results)
     return [searchYelpApi, results, errorMsg];
 };

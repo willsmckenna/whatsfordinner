@@ -1,6 +1,10 @@
 // Library
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faThumbsUp, faThumbsDown } from '@fortawesome/free-solid-svg-icons'
+
+library.add(faThumbsUp, faThumbsDown)
 // Components
 import SearchPage from './src/screens/SearchPage';
 import LoginPage from './src/screens/LoginPage'
