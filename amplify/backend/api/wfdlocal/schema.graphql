@@ -1,0 +1,24 @@
+type rating @model {
+  id: ID!
+  username: String!
+  resname: String!
+  rating: Int!
+  description: String
+}
+
+type userAttended @model {
+  id: ID!
+  username: String!
+  resname: String!
+  attended: Boolean!
+}
+
+type restaurant @model {
+  id: ID!
+  resName: String!
+  address: String!
+  telephone: String!
+  hours: String
+  reservations: String
+  order: String
+}
