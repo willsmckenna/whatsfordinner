@@ -3,15 +3,17 @@ import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 // Components
 import SearchPage from './src/screens/SearchPage';
-import LoginPage from './src/screens/LoginPage'
-import RestaurantProfile from './src/screens/RestaurantProfile'
+import LoginPage from './src/screens/LoginPage';
+import RestaurantSignUp from './src/screens/RestaurantSignUp';
+import RestaurantProfile from './src/screens/RestaurantProfile';
 
 
 const navigator = createStackNavigator(
   {
     Search: SearchPage,
     Login: LoginPage,
-    Restaurant: RestaurantProfile,
+    ResSignUp: RestaurantSignUp,
+    ResProfile: RestaurantProfile
   },
   {
     initialRouteParams: 'Home',

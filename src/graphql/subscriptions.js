@@ -9,6 +9,7 @@ export const onCreateRating = /* GraphQL */ `
       resname
       rating
       description
+      liked
       createdAt
       updatedAt
     }
@@ -22,6 +23,7 @@ export const onUpdateRating = /* GraphQL */ `
       resname
       rating
       description
+      liked
       createdAt
       updatedAt
     }
@@ -35,6 +37,7 @@ export const onDeleteRating = /* GraphQL */ `
       resname
       rating
       description
+      liked
       createdAt
       updatedAt
     }
@@ -76,10 +79,44 @@ export const onDeleteUserAttended = /* GraphQL */ `
     }
   }
 `;
+export const onCreateUserPreferences = /* GraphQL */ `
+  subscription OnCreateUserPreferences {
+    onCreateUserPreferences {
+      id
+      username
+      foodPreferences
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateUserPreferences = /* GraphQL */ `
+  subscription OnUpdateUserPreferences {
+    onUpdateUserPreferences {
+      id
+      username
+      foodPreferences
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteUserPreferences = /* GraphQL */ `
+  subscription OnDeleteUserPreferences {
+    onDeleteUserPreferences {
+      id
+      username
+      foodPreferences
+      createdAt
+      updatedAt
+    }
+  }
+`;
 export const onCreateRestaurant = /* GraphQL */ `
   subscription OnCreateRestaurant {
     onCreateRestaurant {
       id
+      userId
       resName
       address
       telephone
@@ -95,6 +132,7 @@ export const onUpdateRestaurant = /* GraphQL */ `
   subscription OnUpdateRestaurant {
     onUpdateRestaurant {
       id
+      userId
       resName
       address
       telephone
@@ -110,6 +148,7 @@ export const onDeleteRestaurant = /* GraphQL */ `
   subscription OnDeleteRestaurant {
     onDeleteRestaurant {
       id
+      userId
       resName
       address
       telephone

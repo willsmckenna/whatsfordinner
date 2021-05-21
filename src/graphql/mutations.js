@@ -12,6 +12,7 @@ export const createRating = /* GraphQL */ `
       resname
       rating
       description
+      liked
       createdAt
       updatedAt
     }
@@ -28,6 +29,7 @@ export const updateRating = /* GraphQL */ `
       resname
       rating
       description
+      liked
       createdAt
       updatedAt
     }
@@ -44,6 +46,7 @@ export const deleteRating = /* GraphQL */ `
       resname
       rating
       description
+      liked
       createdAt
       updatedAt
     }
@@ -94,6 +97,48 @@ export const deleteUserAttended = /* GraphQL */ `
     }
   }
 `;
+export const createUserPreferences = /* GraphQL */ `
+  mutation CreateUserPreferences(
+    $input: CreateUserPreferencesInput!
+    $condition: ModeluserPreferencesConditionInput
+  ) {
+    createUserPreferences(input: $input, condition: $condition) {
+      id
+      username
+      foodPreferences
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateUserPreferences = /* GraphQL */ `
+  mutation UpdateUserPreferences(
+    $input: UpdateUserPreferencesInput!
+    $condition: ModeluserPreferencesConditionInput
+  ) {
+    updateUserPreferences(input: $input, condition: $condition) {
+      id
+      username
+      foodPreferences
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteUserPreferences = /* GraphQL */ `
+  mutation DeleteUserPreferences(
+    $input: DeleteUserPreferencesInput!
+    $condition: ModeluserPreferencesConditionInput
+  ) {
+    deleteUserPreferences(input: $input, condition: $condition) {
+      id
+      username
+      foodPreferences
+      createdAt
+      updatedAt
+    }
+  }
+`;
 export const createRestaurant = /* GraphQL */ `
   mutation CreateRestaurant(
     $input: CreateRestaurantInput!
@@ -101,6 +146,7 @@ export const createRestaurant = /* GraphQL */ `
   ) {
     createRestaurant(input: $input, condition: $condition) {
       id
+      userId
       resName
       address
       telephone
@@ -119,6 +165,7 @@ export const updateRestaurant = /* GraphQL */ `
   ) {
     updateRestaurant(input: $input, condition: $condition) {
       id
+      userId
       resName
       address
       telephone
@@ -137,6 +184,7 @@ export const deleteRestaurant = /* GraphQL */ `
   ) {
     deleteRestaurant(input: $input, condition: $condition) {
       id
+      userId
       resName
       address
       telephone

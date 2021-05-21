@@ -9,6 +9,7 @@ export const getRating = /* GraphQL */ `
       resname
       rating
       description
+      liked
       createdAt
       updatedAt
     }
@@ -27,6 +28,7 @@ export const listRatings = /* GraphQL */ `
         resname
         rating
         description
+        liked
         createdAt
         updatedAt
       }
@@ -65,10 +67,44 @@ export const listUserAttendeds = /* GraphQL */ `
     }
   }
 `;
+export const getUserPreferences = /* GraphQL */ `
+  query GetUserPreferences($id: ID!) {
+    getUserPreferences(id: $id) {
+      id
+      username
+      foodPreferences
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listUserPreferencess = /* GraphQL */ `
+  query ListUserPreferencess(
+    $filter: ModeluserPreferencesFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listUserPreferencess(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        username
+        foodPreferences
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
 export const getRestaurant = /* GraphQL */ `
   query GetRestaurant($id: ID!) {
     getRestaurant(id: $id) {
       id
+      userId
       resName
       address
       telephone
@@ -89,6 +125,7 @@ export const listRestaurants = /* GraphQL */ `
     listRestaurants(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
+        userId
         resName
         address
         telephone
