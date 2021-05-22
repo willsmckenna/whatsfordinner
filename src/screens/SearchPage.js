@@ -10,7 +10,7 @@ const SearchPage = ({ navigation }) => {
 
     return (
         <View>
-            <Button title="Order Now!" onPress={() => Linking.openURL('https://www.google.com/maps/search/?api=1&query=2601 W Devon Ave Chicago, IL 60659"')} />
+            {/* <Button title="Order Now!" onPress={() => Linking.openURL('https://www.google.com/maps/search/?api=1&query=2601 W Devon Ave Chicago, IL 60659"')} /> */}
             <Button title="Signup" onPress={() => navigation.navigate('Login')} />
             <Button title="Create Restaurant Profile" onPress={() => navigation.navigate('Restaurant')} />
             <Text style={styles.headingText}>What kind of food sounds good to you right now? </Text>
