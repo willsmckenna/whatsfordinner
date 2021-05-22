@@ -82,9 +82,10 @@ const styles = StyleSheet.create({
     },
     stars: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: "white"
+        justifyContent: 'flex-start',
+        alignItems: 'flex-start',
+        backgroundColor: "white",
+        marginHorizontal: 15,
     },
     icons: {
         backgroundColor: "white",
