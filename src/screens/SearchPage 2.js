@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, FlatList, Button } from 'react-native';
 import SearchBar from '../components/SearchBar';
-import ResultsList from './ResultsList';
+import ResultsList from '../components/ResultsList';
 import useYelpResults from '../hooks/useYelpResults';
 
-const SearchPage = ({ navigation}) => {
+const SearchPage = ({ navigation }) => {
     const [term, setTerm ] = useState(' ')
     const [searchYelpApi, results, errorMsg] = useYelpResults();
     
     return (
         <View>
             <Button title="Signup" onPress={() => navigation.navigate('Login')}/>
-            <Button title="Create Restaurant Profile" onPress={() => navigation.navigate('Restaurant')}/>
             <Text style={styles.headingText}>What kind of food sounds good to you right now? </Text>
             <SearchBar 
                 term={term} 
@@ -20,7 +19,7 @@ const SearchPage = ({ navigation}) => {
             />
             <Text style={styles.resultTitle}>Results - {results.length} restaurants</Text>
             {errorMsg ? <Text>{errorMsg}</Text> : null}
-            <ResultsList resultsToDisplay={results} nav={navigation}/>
+            <ResultsList resultsToDisplay={results}/>
         </View>
     );
 }

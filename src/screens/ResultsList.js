@@ -6,16 +6,14 @@ import { Feather } from '@expo/vector-icons';
 var screenWidth = Dimensions.get("window").width; // dynamic width
 
 const ResultsList = ({resultsToDisplay, nav}) => {
-
-    console.log(nav); 
-        return (
+            return (
             <View style={styles.resultsAreaContainer}>
                 <FlatList 
                     keyExtractor={(result) => result.id}
                     data={resultsToDisplay}
                     renderItem={({ item }) => {
                         return (
-                            <TouchableOpacity onPress={()=>nav.navigate('DetailPage')}>
+                            <TouchableOpacity onPress={()=>nav.navigate('DetailPage', {data: item})}>
                             <View style={styles.item}>
                                 <Image style={styles.thumbnail} source={{width: 75, height: 75, uri: item.image_url}}/>
                                 <Text style={styles.restaurantTitle}> {item.name} {"\n"} <Text style={styles.smallText}><Feather name="check-circle"/> You've been here before!</Text> </Text>
