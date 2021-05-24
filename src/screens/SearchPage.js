@@ -10,9 +10,6 @@ const SearchPage = ({ navigation }) => {
     
     return (
         <View>
-            <Button title="Signup" onPress={() => navigation.navigate('Login')}/>
-            <Button title="Create Restaurant Profile" onPress={() => navigation.navigate('ResSignUp')}/>
-            <Button title="See your restaurant profile" onPress={() => navigation.navigate('ResProfile')}/>
             <Text style={styles.headingText}>What kind of food sounds good to you right now? </Text>
             <SearchBar 
                 term={term} 

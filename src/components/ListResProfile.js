@@ -1,23 +1,23 @@
 import React from 'react';
-import { FlatList, View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, SafeAreaView } from 'react-native';
+import { ListItem } from "react-native-elements";
 
 const ListResProfile = ({ resProfile }) => {
     return (
-      <View >
-          <Text style={styles.heading}>Your Restaurant Profile</Text>
-          <FlatList 
-              keyExtractor={(result) => result}
-              data={resProfile}
-              renderItem={({ item }) => {
-                  return (
-                      <View style={styles.item}>
-                          <Text style={styles.smallText}> {item}</Text>
-                      </View>
-                  );
-              }}
-          />
-      </View>
-  )
+        <View>
+            <Text style={styles.heading}>Your Restaurant Profile</Text>
+            {
+                resProfile.map((l, i) => (
+                <ListItem key={i} bottomDivider>
+                    <ListItem.Content>
+                    <ListItem.Title>{l}</ListItem.Title>
+                    <ListItem.Subtitle>{l.subtitle}</ListItem.Subtitle>
+                    </ListItem.Content>
+                </ListItem>
+                ))
+            }
+        </View>
+    )
 };
 
 const styles = StyleSheet.create({
@@ -26,10 +26,15 @@ const styles = StyleSheet.create({
       fontWeight: "bold",
       paddingBottom: 20,
     },
+  container: {
+      flex: 1,
+      justifyContent: "center",
+      backgroundColor: "#F5FCFF"
+    },
   smallText:{
       fontSize: 20,
       fontWeight: "normal",
-      color: "white"
+      color: "black"
   },
   info:{
      paddingRight: 15
@@ -38,7 +43,6 @@ const styles = StyleSheet.create({
       flexShrink: 1
   },
   item:{
-      backgroundColor: "#FFA500",
       padding: 10,
       marginBottom: 15,
       marginHorizontal: 15,
