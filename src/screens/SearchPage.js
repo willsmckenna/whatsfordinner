@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, FlatList, Button } from 'react-native';
 import SearchBar from '../components/SearchBar';
-import ResultsList from '../components/ResultsList';
+import ResultsList from './ResultsList';
 import useYelpResults from '../hooks/useYelpResults';
 
 const SearchPage = ({ navigation }) => {
@@ -20,7 +20,7 @@ const SearchPage = ({ navigation }) => {
             />
             <Text style={styles.resultTitle}>Results - {results.length} restaurants</Text>
             {errorMsg ? <Text>{errorMsg}</Text> : null}
-            <ResultsList resultsToDisplay={results}/>
+            <ResultsList resultsToDisplay={results} nav={navigation}/>
         </View>
     );
 }

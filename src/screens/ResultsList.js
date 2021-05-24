@@ -1,32 +1,35 @@
 import React from 'react';
+// other Libraries
 import { View, FlatList, Text, StyleSheet, Image, Touchable, TouchableOpacity, Dimensions} from 'react-native';
 import { Feather } from '@expo/vector-icons';
 
 var screenWidth = Dimensions.get("window").width; // dynamic width
 
-const ResultsList = ({ resultsToDisplay }) => {
-    return (
-        <View style={styles.resultsAreaContainer}>
-            <FlatList 
-                keyExtractor={(result) => result.id}
-                data={resultsToDisplay}
-                renderItem={({ item }) => {
-                    return (
-                        <TouchableOpacity>
-                        <View style={styles.item}>
-                            <Image style={styles.thumbnail} source={{width: 75, height: 75, uri: item.image_url}}/>
-                            <Text style={styles.restaurantTitle}> {item.name} {"\n"} <Text style={styles.smallText}><Feather name="check-circle"/> You've been here before!</Text> </Text>
-                            <View style={styles.info}>
-                            <Text>{item.rating} stars</Text>
-                            <Text><Feather name="map-pin"/> {item.location.city}, {item.location.state} </Text>
+const ResultsList = ({resultsToDisplay, nav}) => {
+
+    console.log(nav); 
+        return (
+            <View style={styles.resultsAreaContainer}>
+                <FlatList 
+                    keyExtractor={(result) => result.id}
+                    data={resultsToDisplay}
+                    renderItem={({ item }) => {
+                        return (
+                            <TouchableOpacity onPress={()=>nav.navigate('DetailPage')}>
+                            <View style={styles.item}>
+                                <Image style={styles.thumbnail} source={{width: 75, height: 75, uri: item.image_url}}/>
+                                <Text style={styles.restaurantTitle}> {item.name} {"\n"} <Text style={styles.smallText}><Feather name="check-circle"/> You've been here before!</Text> </Text>
+                                <View style={styles.info}>
+                                <Text>{item.rating} stars</Text>
+                                <Text><Feather name="map-pin"/> {item.location.city}, {item.location.state} </Text>
+                                </View>
                             </View>
-                        </View>
-                        </TouchableOpacity>
-                    );
-                }}
-            />
-        </View>
-    )
+                            </TouchableOpacity>
+                        );
+                    }}
+                />
+            </View>
+        );
 }
 
 const styles = StyleSheet.create({
@@ -71,4 +74,5 @@ item:{
     width: screenWidth - 30
 }
 });
+
 export default ResultsList;

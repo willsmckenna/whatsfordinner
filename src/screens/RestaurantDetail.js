@@ -5,7 +5,7 @@ import { Feather } from '@expo/vector-icons';
 const RestaurantDetail = () => {
     return (
         <View>
-            
+            <Text>I am a detail page</Text>
         </View>
     )
 }
