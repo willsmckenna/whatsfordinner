@@ -18,7 +18,7 @@ const SearchPage = ({ navigation }) => {
             />
             <Text style={styles.resultTitle}>Results - {results.length} restaurants</Text>
             {errorMsg ? <Text>{errorMsg}</Text> : null}
-            <ResultsList resultsToDisplay={results}/>
+            <ResultsList resultsToDisplay={results} nav={navigation}/>
         </View>
     );
 }
