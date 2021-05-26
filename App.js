@@ -2,6 +2,7 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { library } from '@fortawesome/fontawesome-svg-core'
 
 // Components
 import SearchPage from './src/screens/SearchPage';
@@ -11,6 +12,9 @@ import RestaurantProfile from './src/screens/RestaurantProfile';
 import RestaurantDetail from './src/screens/RestaurantDetail';
 import CustomNavigationBar from './src/components/CustomNavigationBar';
 import { DefaultTheme, Provider } from 'react-native-paper';
+import { faThumbsUp, faThumbsDown } from '@fortawesome/free-solid-svg-icons'
+
+library.add(faThumbsUp, faThumbsDown);
 
 const Stack = createStackNavigator();
 
