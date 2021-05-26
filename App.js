@@ -10,13 +10,23 @@ import RestaurantSignUp from './src/screens/RestaurantSignUp';
 import RestaurantProfile from './src/screens/RestaurantProfile';
 import RestaurantDetail from './src/screens/RestaurantDetail';
 import CustomNavigationBar from './src/components/CustomNavigationBar';
-import { Provider } from 'react-native-paper';
+import { DefaultTheme, Provider } from 'react-native-paper';
 
 const Stack = createStackNavigator();
 
 export default function App() {
+  const theme = {
+    ...DefaultTheme,
+    roundness: 2,
+    colors: {
+      ...DefaultTheme.colors,
+      primary: '#f7f7f7',
+      accent: '#f1c40f',
+    },
+  };
+
   return (
-    <Provider>
+    <Provider theme={theme}>
       <NavigationContainer>
         <Stack.Navigator 
           initialRouteName="Home"

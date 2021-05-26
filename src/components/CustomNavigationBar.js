@@ -15,7 +15,7 @@ function CustomNavigationBar({ navigation, previous }) {
           visible={visible}
           onDismiss={closeMenu}
           anchor={
-            <Appbar.Action icon="menu" color="white" onPress={openMenu} />
+            <Appbar.Action icon="menu" color="black" onPress={openMenu} />
           }>
           <Menu.Item onPress={() => { navigation.navigate('Login');}} title="Log In" />
           <Menu.Item onPress={() => { console.log('Go to profile page here')}} title="See Your Profile" />
