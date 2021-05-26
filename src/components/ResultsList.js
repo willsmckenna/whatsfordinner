@@ -30,7 +30,7 @@ const ResultsList = ({ resultsToDisplay }) => {
                                 <FontAwesomeIcon style={styles.iconUp} icon="thumbs-up" />
                                 <FontAwesomeIcon style={styles.iconDown} icon="thumbs-down" />
                             </View>
-
+                            
                         </TouchableOpacity>
                     );
                 }}

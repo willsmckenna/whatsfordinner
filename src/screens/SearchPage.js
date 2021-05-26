@@ -10,7 +10,8 @@ const SearchPage = ({ navigation }) => {
 
     return (
         <View>
-            <Button title="Order Now!" onPress={() => Linking.openURL('apps.ubereats.com')} />
+            <Button title="Uber Eats!" onPress={() => Linking.openURL('https://ubereats.app.link')} />
+            <Button title="Yelp!" onPress={() => Linking.openURL('res')} />
             <Button title="Signup" onPress={() => navigation.navigate('Login')} />
             <Button title="Create Restaurant Profile" onPress={() => navigation.navigate('Restaurant')} />
             <Text style={styles.headingText}>What kind of food sounds good to you right now? </Text>
