@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "whatsfordinner",
-    "slug": "whatsfordinner",
+    "name": "whatsfordinner-sprint3",
+    "slug": "whatsfordinner-sprint3",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -9,6 +9,18 @@
       "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
+    },
+    "hooks": {
+      "postPublish": [
+        {
+          "file": "sentry-expo/upload-sourcemaps",
+          "config": {
+            "organization": "depaul-university-r0",
+            "project": "depaul-university-r0",
+            "authToken": "32f995ddeb8944078b7f0ff14a1ca872b04652a6d810465aa211bc8168e77169"
+          }
+        }
+      ]
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -28,6 +40,7 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": ""
   }
 }
