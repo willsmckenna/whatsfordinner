@@ -1,0 +1,10 @@
+type user @model {
+  id: ID!
+  userId: String!
+  name: String!
+  address: String!
+  telephone: String!
+  foodPreferences: [String]
+  reservations: String
+  order: String
+}

@@ -1,6 +1,6 @@
 {
   "api": {
-    "wfdlocal": {
+    "wfd": {
       "service": "AppSync",
       "providerPlugin": "awscloudformation",
       "output": {
@@ -8,8 +8,8 @@
           "defaultAuthentication": {
             "authenticationType": "API_KEY",
             "apiKeyConfig": {
-              "apiKeyExpirationDays": 60,
-              "description": "localapikey"
+              "apiKeyExpirationDays": 30,
+              "description": "wfdkey"
             }
           },
           "additionalAuthenticationProviders": []
@@ -18,11 +18,27 @@
     }
   },
   "auth": {
-    "wfdlocal10743331": {
+    "wfdb357964d": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
       "customAuth": false
+    },
+    "userPoolGroups": {
+      "service": "Cognito-UserPool-Groups",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "auth",
+          "resourceName": "wfdb357964d",
+          "attributes": [
+            "UserPoolId",
+            "AppClientIDWeb",
+            "AppClientID",
+            "IdentityPoolId"
+          ]
+        }
+      ]
     }
   }
 }

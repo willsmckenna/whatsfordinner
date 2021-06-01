@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\.expo-shared",
+    "\\amplify",
+    "\\amplify\\backend",
+    "\\src",
+    "\\src\\api",
+    "\\src\\components",
+    "\\src\\graphql",
+    "\\src\\hooks",
+    "\\src\\screens"
+  ],
+  "SelectedNode": "\\src",
+  "PreviewInSolutionExplorer": false
+}
