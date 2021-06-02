@@ -1,17 +1,10 @@
-type rating @model {
-  id: ID!
-  username: String!
-  resname: String!
-  rating: Int!
-  description: String
-  liked: Boolean
-}
-
-type userAttended @model {
+type userRating @model {
   id: ID!
   username: String!
   resname: String!
   attended: Boolean!
+  liked: Boolean
+  rating: Int
 }
 
 type userPreferences @model {

@@ -19,18 +19,18 @@ const UserProfile = ( {navigation} ) => {
                         userId: { eq: id } 
                     }
                 }));
-    
                 let userList = [];
                 const { data } = userDetail;
+                console.log(data);
                 const userProfile = data.listRestaurants.items[0];
-                if (!userProfile){
-                    setErrorMsg('No user food preferences found for your account. Click the add food preferences button to add to your account');
-                }
                 const { username, foodPreferences } = userProfile;
                 userList.push(username, foodPreferences);
                 setUserDetails(userList);
+                console.log(userDetails);
+                
             } catch (err){
-                console.log("error fetching data:" +  err);
+                console.log("error fetching data:" +  JSON.stringify(err));
+                setErrorMsg('No user food preferences found for your account. Click the add food preferences button to add to your account');
             }
         }
       fetchProfileData();
@@ -38,8 +38,7 @@ const UserProfile = ( {navigation} ) => {
 
     return (
         <View>
-            <ListUserProfile userProfile={userDetails} />
-            {errorMsg ? <Text>{errorMsg}</Text> : null}
+            {errorMsg ? <Text>{errorMsg}</Text> : <ListUserProfile userProfile={userDetails} />}
             <Button title="Add Food Preferences" onPress={() => navigation.navigate('FoodSelectScreen')}/>
         </View>
     );

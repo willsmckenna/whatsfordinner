@@ -1,97 +1,52 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const createRating = /* GraphQL */ `
-  mutation CreateRating(
-    $input: CreateRatingInput!
-    $condition: ModelratingConditionInput
+export const createUserRating = /* GraphQL */ `
+  mutation CreateUserRating(
+    $input: CreateUserRatingInput!
+    $condition: ModeluserRatingConditionInput
   ) {
-    createRating(input: $input, condition: $condition) {
-      id
-      username
-      resname
-      rating
-      description
-      liked
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const updateRating = /* GraphQL */ `
-  mutation UpdateRating(
-    $input: UpdateRatingInput!
-    $condition: ModelratingConditionInput
-  ) {
-    updateRating(input: $input, condition: $condition) {
-      id
-      username
-      resname
-      rating
-      description
-      liked
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const deleteRating = /* GraphQL */ `
-  mutation DeleteRating(
-    $input: DeleteRatingInput!
-    $condition: ModelratingConditionInput
-  ) {
-    deleteRating(input: $input, condition: $condition) {
-      id
-      username
-      resname
-      rating
-      description
-      liked
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const createUserAttended = /* GraphQL */ `
-  mutation CreateUserAttended(
-    $input: CreateUserAttendedInput!
-    $condition: ModeluserAttendedConditionInput
-  ) {
-    createUserAttended(input: $input, condition: $condition) {
+    createUserRating(input: $input, condition: $condition) {
       id
       username
       resname
       attended
+      liked
+      rating
       createdAt
       updatedAt
     }
   }
 `;
-export const updateUserAttended = /* GraphQL */ `
-  mutation UpdateUserAttended(
-    $input: UpdateUserAttendedInput!
-    $condition: ModeluserAttendedConditionInput
+export const updateUserRating = /* GraphQL */ `
+  mutation UpdateUserRating(
+    $input: UpdateUserRatingInput!
+    $condition: ModeluserRatingConditionInput
   ) {
-    updateUserAttended(input: $input, condition: $condition) {
+    updateUserRating(input: $input, condition: $condition) {
       id
       username
       resname
       attended
+      liked
+      rating
       createdAt
       updatedAt
     }
   }
 `;
-export const deleteUserAttended = /* GraphQL */ `
-  mutation DeleteUserAttended(
-    $input: DeleteUserAttendedInput!
-    $condition: ModeluserAttendedConditionInput
+export const deleteUserRating = /* GraphQL */ `
+  mutation DeleteUserRating(
+    $input: DeleteUserRatingInput!
+    $condition: ModeluserRatingConditionInput
   ) {
-    deleteUserAttended(input: $input, condition: $condition) {
+    deleteUserRating(input: $input, condition: $condition) {
       id
       username
       resname
       attended
+      liked
+      rating
       createdAt
       updatedAt
     }

@@ -1,79 +1,43 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const onCreateRating = /* GraphQL */ `
-  subscription OnCreateRating {
-    onCreateRating {
-      id
-      username
-      resname
-      rating
-      description
-      liked
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onUpdateRating = /* GraphQL */ `
-  subscription OnUpdateRating {
-    onUpdateRating {
-      id
-      username
-      resname
-      rating
-      description
-      liked
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onDeleteRating = /* GraphQL */ `
-  subscription OnDeleteRating {
-    onDeleteRating {
-      id
-      username
-      resname
-      rating
-      description
-      liked
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onCreateUserAttended = /* GraphQL */ `
-  subscription OnCreateUserAttended {
-    onCreateUserAttended {
+export const onCreateUserRating = /* GraphQL */ `
+  subscription OnCreateUserRating {
+    onCreateUserRating {
       id
       username
       resname
       attended
+      liked
+      rating
       createdAt
       updatedAt
     }
   }
 `;
-export const onUpdateUserAttended = /* GraphQL */ `
-  subscription OnUpdateUserAttended {
-    onUpdateUserAttended {
+export const onUpdateUserRating = /* GraphQL */ `
+  subscription OnUpdateUserRating {
+    onUpdateUserRating {
       id
       username
       resname
       attended
+      liked
+      rating
       createdAt
       updatedAt
     }
   }
 `;
-export const onDeleteUserAttended = /* GraphQL */ `
-  subscription OnDeleteUserAttended {
-    onDeleteUserAttended {
+export const onDeleteUserRating = /* GraphQL */ `
+  subscription OnDeleteUserRating {
+    onDeleteUserRating {
       id
       username
       resname
       attended
+      liked
+      rating
       createdAt
       updatedAt
     }

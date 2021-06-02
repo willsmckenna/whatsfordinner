@@ -3,50 +3,50 @@
       "id": 0,
       "key": "Burgers",
       "checked": false,
-      "image": "Images/Burger.jpg"
+      "image": "../status/images/Burger.jpg"
   
     },
     {
       "id": 1,
       "key": "Pizzas",
       "checked": false,
-      "image": "Images/pizza.jpg"
+      "image": "../static/images/pizza.jpg"
     },
     {
       "id": 2,
       "key": "Salad",
       "checked": false,
-      "image": "Images/Salad.jpeg"
+      "image": "../static/images/Salad.jpeg"
     },
     {
       "id": 3,
       "key": "Tacos",
       "checked": false,
-      "image": "Images/tacos.jpg"
+      "image": "../static/images/tacos.jpg"
     },
     {
       "id": 4,
       "key": "Wings",
       "checked": false,
-      "image": "Images/wings.jpg"
+      "image": "../static/images/wings.jpg"
     },
     {
       "id": 5,
       "key": "Pasta",
       "checked": false,
-      "image": "Images/pasta.jpg"
+      "image": "../static/images/pasta.jpg"
     },
   
     {
       "id": 6,
       "key": "Sandwiches",
       "checked": false,
-      "image": "Images/sandwich.jpg"
+      "image": "../static/images/sandwich.jpg"
     },
     {
       "id": 7,
       "key": "Salad",
       "checked": false,
-      "image": "Images/Salad.jpg"
+      "image": "../static/images/Salad.jpg"
     }
   ]

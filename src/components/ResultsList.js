@@ -4,8 +4,6 @@ import { View, FlatList, Text, StyleSheet, Image, Touchable, TouchableOpacity, D
 import { Feather } from '@expo/vector-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import StarRating from './StarRating';
-import { faStar, faStarHalf } from '@fortawesome/free-solid-svg-icons';
-import { faStar as fasStar } from '@fortawesome/free-regular-svg-icons';
 
 var screenWidth = Dimensions.get("window").width; // dynamic width
 

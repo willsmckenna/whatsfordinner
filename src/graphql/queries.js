@@ -1,65 +1,34 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const getRating = /* GraphQL */ `
-  query GetRating($id: ID!) {
-    getRating(id: $id) {
-      id
-      username
-      resname
-      rating
-      description
-      liked
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const listRatings = /* GraphQL */ `
-  query ListRatings(
-    $filter: ModelratingFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listRatings(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        username
-        resname
-        rating
-        description
-        liked
-        createdAt
-        updatedAt
-      }
-      nextToken
-    }
-  }
-`;
-export const getUserAttended = /* GraphQL */ `
-  query GetUserAttended($id: ID!) {
-    getUserAttended(id: $id) {
+export const getUserRating = /* GraphQL */ `
+  query GetUserRating($id: ID!) {
+    getUserRating(id: $id) {
       id
       username
       resname
       attended
+      liked
+      rating
       createdAt
       updatedAt
     }
   }
 `;
-export const listUserAttendeds = /* GraphQL */ `
-  query ListUserAttendeds(
-    $filter: ModeluserAttendedFilterInput
+export const listUserRatings = /* GraphQL */ `
+  query ListUserRatings(
+    $filter: ModeluserRatingFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    listUserAttendeds(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    listUserRatings(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
         username
         resname
         attended
+        liked
+        rating
         createdAt
         updatedAt
       }

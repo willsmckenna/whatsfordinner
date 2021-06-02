@@ -5,18 +5,9 @@ import { ListItem } from "react-native-elements";
 const ListUserProfile = ({ userProfile }) => {
     return (
         <View>
-            <Text style={styles.heading}>User Profile: {userProfile[0]}</Text>
+            <Text style={styles.heading}>User Profile: {userProfile}</Text>
             <Text style={styles.smallText}>Preferred Foods:</Text>
-            {
-                userProfile[1].map((l, i) => (
-                <ListItem key={i} bottomDivider>
-                    <ListItem.Content>
-                    <ListItem.Title>{l}</ListItem.Title>
-                    <ListItem.Subtitle>{l.subtitle}</ListItem.Subtitle>
-                    </ListItem.Content>
-                </ListItem>
-                ))
-            }
+            
         </View>
     )
 };
@@ -39,9 +30,6 @@ const styles = StyleSheet.create({
   },
   info:{
      paddingRight: 15
-  },
-  thumbnail:{
-      flexShrink: 1
   },
   item:{
       padding: 10,
