@@ -2,12 +2,12 @@ import React from 'react';
 import { View, Text, StyleSheet, SafeAreaView } from 'react-native';
 import { ListItem } from "react-native-elements";
 
-const ProfileDetails = ({ useProfile }) => {
+const ProfileDetails = ({ userProfile }) => {
     return (
         <View>
             <Text style={styles.heading}>Your Profile</Text>
             {
-                useProfile.map((l, i) => (
+                userProfile.map((l, i) => (
                     <ListItem key={i} bottomDivider>
                         <ListItem.Content>
                             <ListItem.Title>{l}</ListItem.Title>

@@ -43,4 +43,4 @@ const UserProfile = () => {
     );
 };
 
-export default Authenticator(UserProfile);
+export default UserProfile;
