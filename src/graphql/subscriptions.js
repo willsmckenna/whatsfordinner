@@ -47,6 +47,7 @@ export const onCreateUserPreferences = /* GraphQL */ `
   subscription OnCreateUserPreferences {
     onCreateUserPreferences {
       id
+      userId
       username
       foodPreferences
       createdAt
@@ -58,6 +59,7 @@ export const onUpdateUserPreferences = /* GraphQL */ `
   subscription OnUpdateUserPreferences {
     onUpdateUserPreferences {
       id
+      userId
       username
       foodPreferences
       createdAt
@@ -69,6 +71,7 @@ export const onDeleteUserPreferences = /* GraphQL */ `
   subscription OnDeleteUserPreferences {
     onDeleteUserPreferences {
       id
+      userId
       username
       foodPreferences
       createdAt

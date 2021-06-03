@@ -9,6 +9,7 @@ type userRating @model {
 
 type userPreferences @model {
   id: ID!
+  userId: String!
   username: String!
   foodPreferences: [String]
 }

@@ -13,7 +13,6 @@ import RestaurantProfile from './src/screens/RestaurantProfile';
 import RestaurantDetail from './src/screens/RestaurantDetail';
 import CustomNavigationBar from './src/components/CustomNavigationBar';
 import UserProfile from './src/screens/UserProfile';
-import FoodSelect from './src/screens/FoodSelectScreen';
 import { DefaultTheme, Provider } from 'react-native-paper';
 import { faThumbsUp, faThumbsDown } from '@fortawesome/free-solid-svg-icons'
 
@@ -53,7 +52,6 @@ export default function App() {
           <Stack.Screen name="ResProfile" component={RestaurantProfile} />
           <Stack.Screen name="DetailPage" component={RestaurantDetail} />
           <Stack.Screen name="UserProfilePage" component={UserProfile}/>
-          <Stack.Screen name="FoodSelectScreen" component={FoodSelect} />
         </Stack.Navigator>
       </NavigationContainer>
     </Provider>

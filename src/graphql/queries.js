@@ -40,6 +40,7 @@ export const getUserPreferences = /* GraphQL */ `
   query GetUserPreferences($id: ID!) {
     getUserPreferences(id: $id) {
       id
+      userId
       username
       foodPreferences
       createdAt
@@ -47,7 +48,7 @@ export const getUserPreferences = /* GraphQL */ `
     }
   }
 `;
-export const listUserPreferencess = /* GraphQL */ `
+export const listUserPreferences = /* GraphQL */ `
   query ListUserPreferencess(
     $filter: ModeluserPreferencesFilterInput
     $limit: Int
@@ -60,6 +61,7 @@ export const listUserPreferencess = /* GraphQL */ `
     ) {
       items {
         id
+        userId
         username
         foodPreferences
         createdAt

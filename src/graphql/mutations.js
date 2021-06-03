@@ -59,6 +59,7 @@ export const createUserPreferences = /* GraphQL */ `
   ) {
     createUserPreferences(input: $input, condition: $condition) {
       id
+      userId
       username
       foodPreferences
       createdAt
@@ -73,6 +74,7 @@ export const updateUserPreferences = /* GraphQL */ `
   ) {
     updateUserPreferences(input: $input, condition: $condition) {
       id
+      userId
       username
       foodPreferences
       createdAt
@@ -87,6 +89,7 @@ export const deleteUserPreferences = /* GraphQL */ `
   ) {
     deleteUserPreferences(input: $input, condition: $condition) {
       id
+      userId
       username
       foodPreferences
       createdAt
