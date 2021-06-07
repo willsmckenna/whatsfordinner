@@ -10,15 +10,18 @@ import Swipeable from 'react-native-gesture-handler/Swipeable';
 
 var screenWidth = Dimensions.get("window").width; // dynamic width
 
+
 const ResultsList = ({resultsToDisplay, nav}) => {
     const sliderMenu = () => {
         return(
         <View style={styles.icons}>
-            <TouchableOpacity><FontAwesomeIcon style={styles.iconUp} icon="thumbs-up" /></TouchableOpacity>
-             <TouchableOpacity><FontAwesomeIcon style={styles.iconDown} icon="thumbs-down" /></TouchableOpacity>
+            <TouchableOpacity style={styles.buttonUp}><FontAwesomeIcon style={styles.iconUp} icon="thumbs-up" /></TouchableOpacity>
+             <TouchableOpacity style={styles.buttonDown}><FontAwesomeIcon style={styles.iconDown} icon="thumbs-down" /></TouchableOpacity>
          </View>
         );
     };
+
+    
             return (
             <View style={styles.resultsAreaContainer}>
                 <FlatList 
@@ -27,14 +30,14 @@ const ResultsList = ({resultsToDisplay, nav}) => {
                     renderItem={({ item }) => {
                         return (
                             <TouchableOpacity onPress={()=>nav.navigate('DetailPage', {data: item})}>
-                                <Swipeable renderRightActions={sliderMenu} onSwipeableOpen={()=> console.log("opened")}>
+                                <Swipeable renderRightActions={sliderMenu} onSwipeableLeftOpen={()=> console.log("Left Opened")}>
                             <View style={styles.item}>
-                                <Image style={styles.thumbnail} source={{width: 75, height: 100, uri: item.image_url}}/>
+                                <Image style={styles.thumbnail} source={{width: 100, height: 100, uri: item.image_url}}/>
                                     <Text style={styles.restaurantTitle}> {item.name} {"\n"} <Text style={styles.smallText}><Feather name="check-circle"/> You've been here before!</Text> </Text>
                                     <Text style={styles.locations}><Feather name="map-pin"/> {item.location.city}, {item.location.state} </Text>
                                 <View style={styles.info}>
                                     <StarRating style={styles.stars} item={item} />
-                                </View>
+                               </View>
                             </View>
                             </Swipeable>
                              </TouchableOpacity>
@@ -71,7 +74,8 @@ const styles = StyleSheet.create({
         color: "#FF6347"
     },
     info:{
-       paddingRight: 15
+       paddingRight: 15,
+       paddingLeft: 15
     },
     thumbnail:{
         flexShrink: 1
@@ -97,7 +101,7 @@ stars: {
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
     backgroundColor: "white",
-    marginHorizontal: 15,
+    marginHorizontal: 15
 },
 icons: {
     backgroundColor: "white",
@@ -105,16 +109,41 @@ icons: {
     marginHorizontal: 15,
     flex: 1,
     flexDirection: "row", // main axis,
-    paddingBottom: 10,
+    justifyContent:"space-between",
+    alignItems:"stretch",
+    //paddingBottom: 10
+},
+buttonUp:{
+    width: (screenWidth / 2) - 35,
+    height: 75,
+    backgroundColor: "#3bbf5e",
+    borderRadius: 10,
+    marginTop: 25,
+    marginLeft: 13
+},
+buttonDown:{
+    width: (screenWidth / 2) - 35,
+    height: 75,
+    backgroundColor: "#eb4949",
+    borderRadius: 10,
+    marginTop: 25,
+    marginRight: 13
 },
 iconUp: {
-    marginRight: 40,
-    marginLeft: 102,
-    padding: 9,
+   // marginRight: 40,
+   // marginLeft: 102,
+   padding: 15,
+   color: "white",
+   marginTop: 22,
+   marginLeft: 63
 },
 iconDown: {
-    marginRight: 10,
-    padding: 9
+   // marginRight: 10,
+  //  padding: 9
+  padding: 15,
+  color: "white",
+  marginTop: 22,
+   marginLeft: 63
 }
 });
 
