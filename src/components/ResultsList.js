@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect }  from 'react';
 // other Libraries
 import { View, FlatList, Text, StyleSheet, Image, Touchable, TouchableOpacity, Dimensions} from 'react-native';
 import { Feather } from '@expo/vector-icons';
@@ -7,6 +7,9 @@ import StarRating from './StarRating';
 import { faStar, faStarHalf } from '@fortawesome/free-solid-svg-icons';
 import { faStar as fasStar } from '@fortawesome/free-regular-svg-icons';
 import Swipeable from 'react-native-gesture-handler/Swipeable';
+import {Authenticator} from 'aws-amplify-react-native';
+import Auth from '@aws-amplify/auth';
+import Amplify, { API, graphqlOperation } from 'aws-amplify';
 
 var screenWidth = Dimensions.get("window").width; // dynamic width
 

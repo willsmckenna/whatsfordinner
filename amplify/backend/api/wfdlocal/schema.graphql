@@ -30,3 +30,9 @@ type restaurant @model {
   reservations: String
   order: String
 }
+
+type userRatings @model{
+  id: ID!
+  userId: String!
+  rating: String!
+}
