@@ -6,10 +6,19 @@ import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import StarRating from './StarRating';
 import { faStar, faStarHalf } from '@fortawesome/free-solid-svg-icons';
 import { faStar as fasStar } from '@fortawesome/free-regular-svg-icons';
+import Swipeable from 'react-native-gesture-handler/Swipeable';
 
 var screenWidth = Dimensions.get("window").width; // dynamic width
 
 const ResultsList = ({resultsToDisplay, nav}) => {
+    const sliderMenu = () => {
+        return(
+        <View style={styles.icons}>
+            <TouchableOpacity><FontAwesomeIcon style={styles.iconUp} icon="thumbs-up" /></TouchableOpacity>
+             <TouchableOpacity><FontAwesomeIcon style={styles.iconDown} icon="thumbs-down" /></TouchableOpacity>
+         </View>
+        );
+    };
             return (
             <View style={styles.resultsAreaContainer}>
                 <FlatList 
@@ -18,24 +27,22 @@ const ResultsList = ({resultsToDisplay, nav}) => {
                     renderItem={({ item }) => {
                         return (
                             <TouchableOpacity onPress={()=>nav.navigate('DetailPage', {data: item})}>
+                                <Swipeable renderRightActions={sliderMenu} onSwipeableOpen={()=> console.log("opened")}>
                             <View style={styles.item}>
-                                <Image style={styles.thumbnail} source={{width: 75, height: 75, uri: item.image_url}}/>
-                                <Text style={styles.restaurantTitle}> {item.name} {"\n"} <Text style={styles.smallText}><Feather name="check-circle"/> You've been here before!</Text> </Text>
+                                <Image style={styles.thumbnail} source={{width: 75, height: 100, uri: item.image_url}}/>
+                                    <Text style={styles.restaurantTitle}> {item.name} {"\n"} <Text style={styles.smallText}><Feather name="check-circle"/> You've been here before!</Text> </Text>
+                                    <Text style={styles.locations}><Feather name="map-pin"/> {item.location.city}, {item.location.state} </Text>
                                 <View style={styles.info}>
-                                <Text>{item.rating} stars</Text>
-                                <Text><Feather name="map-pin"/> {item.location.city}, {item.location.state} </Text>
+                                    <StarRating style={styles.stars} item={item} />
                                 </View>
                             </View>
-                            <View style={styles.stars}>
-                                <StarRating item={item} />
-                            </View>
-                            <View style={styles.icons}>
-                                <FontAwesomeIcon style={styles.iconUp} icon="thumbs-up" />
-                                <FontAwesomeIcon style={styles.iconDown} icon="thumbs-down" />
-                            </View>
-                            </TouchableOpacity>
+                            </Swipeable>
+                             </TouchableOpacity>
+                             
                         );
+                        
                     }}
+                    
                 />
             </View>    
         );
@@ -69,11 +76,14 @@ const styles = StyleSheet.create({
     thumbnail:{
         flexShrink: 1
     },
+    locations: {
+        paddingRight: 15
+    },
 item:{
     backgroundColor: "white",
     padding: 0,
-    //marginBottom: 15,
-    //borderRadius: 5,
+    marginBottom: 15,
+    borderRadius: 5,
     marginHorizontal: 15,
     flex: 1,
     flexDirection: "row", // main axis
