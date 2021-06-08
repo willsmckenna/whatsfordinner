@@ -1,0 +1,20 @@
+type user @model 
+@auth(
+    rules: [
+      {
+        allow: owner
+        ownerField: "owner"
+        operations: [create, update, delete]
+      }
+    ]
+  ) {
+  id: ID!
+  userId: String!
+  name: String!
+  address: String!
+  telephone: String!
+  foodPreferences: [String]
+  reservations: String
+  order: String
+}
+

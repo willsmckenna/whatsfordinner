@@ -1,19 +1,19 @@
 {
   "dev": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-wfdlocal-dev-142750-authRole",
-      "UnauthRoleArn": "arn:aws:iam::354336895686:role/amplify-wfdlocal-dev-142750-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::354336895686:role/amplify-wfdlocal-dev-142750-authRole",
-      "Region": "us-east-1",
-      "DeploymentBucketName": "amplify-wfdlocal-dev-142750-deployment",
-      "UnauthRoleName": "amplify-wfdlocal-dev-142750-unauthRole",
-      "StackName": "amplify-wfdlocal-dev-142750",
-      "StackId": "arn:aws:cloudformation:us-east-1:354336895686:stack/amplify-wfdlocal-dev-142750/f8e9f240-b745-11eb-ba47-123cb1b397a4",
-      "AmplifyAppId": "d21lxzimrj87ep"
+      "AuthRoleName": "amplify-cindywfd-dev-105527-authRole",
+      "UnauthRoleArn": "arn:aws:iam::479147213475:role/amplify-cindywfd-dev-105527-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::479147213475:role/amplify-cindywfd-dev-105527-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-cindywfd-dev-105527-deployment",
+      "UnauthRoleName": "amplify-cindywfd-dev-105527-unauthRole",
+      "StackName": "amplify-cindywfd-dev-105527",
+      "StackId": "arn:aws:cloudformation:us-east-2:479147213475:stack/amplify-cindywfd-dev-105527/735ac200-c616-11eb-b70b-0281aed4af26",
+      "AmplifyAppId": "d8mmy2bq30nvc"
     },
     "categories": {
       "auth": {
-        "wfdlocal10743331": {}
+        "cindywfda4d6789a": {}
       }
     }
   }

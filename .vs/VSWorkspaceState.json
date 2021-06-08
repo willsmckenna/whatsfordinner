@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\amplify",
+    "\\amplify\\backend",
+    "\\amplify\\backend\\api",
+    "\\amplify\\backend\\api\\cindywfd",
+    "\\src",
+    "\\src\\components",
+    "\\src\\graphql",
+    "\\src\\hooks",
+    "\\src\\screens"
+  ],
+  "SelectedNode": "\\amplify\\backend\\api\\cindywfd\\schema.graphql",
+  "PreviewInSolutionExplorer": false
+}

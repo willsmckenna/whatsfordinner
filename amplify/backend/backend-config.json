@@ -1,15 +1,14 @@
 {
   "api": {
-    "wfdlocal": {
+    "cindywfd": {
       "service": "AppSync",
       "providerPlugin": "awscloudformation",
       "output": {
         "authConfig": {
           "defaultAuthentication": {
-            "authenticationType": "API_KEY",
-            "apiKeyConfig": {
-              "apiKeyExpirationDays": 60,
-              "description": "localapikey"
+            "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+            "userPoolConfig": {
+              "userPoolId": "authcindywfda4d6789a"
             }
           },
           "additionalAuthenticationProviders": []
@@ -18,7 +17,7 @@
     }
   },
   "auth": {
-    "wfdlocal10743331": {
+    "cindywfda4d6789a": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],

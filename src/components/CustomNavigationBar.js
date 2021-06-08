@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Appbar, Menu } from 'react-native-paper';
+import { Auth } from 'aws-amplify';
 
 function CustomNavigationBar({ navigation, previous }) {
   const [visible, setVisible] = useState(false);
@@ -17,10 +18,11 @@ function CustomNavigationBar({ navigation, previous }) {
           anchor={
             <Appbar.Action icon="menu" color="black" onPress={openMenu} />
           }>
-          <Menu.Item onPress={() => { navigation.navigate('Login');}} title="Log In" />
-          <Menu.Item onPress={() => { console.log('Go to profile page here')}} title="See Your Profile" />
+          
+          <Menu.Item onPress={() => { navigation.navigate('UseProfile') }} title="See Your Profile" />
           <Menu.Item onPress={() => { navigation.navigate('ResSignUp')}} title="Create Restaurant Profile" />
-          <Menu.Item onPress={() => { navigation.navigate('ResProfile')}} title="See Your Restaurant Profile" />
+          <Menu.Item onPress={() => { navigation.navigate('ResProfile') }} title="See Your Restaurant Profile" />
+          <Menu.Item onPress={() => { Auth.signOut()}} title="Log Out" />
         </Menu>
       ) : null}
     </Appbar.Header>

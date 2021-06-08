@@ -1,23 +1,26 @@
 import React from 'react'
-import {StatusBar} from 'react-native'
+import { StatusBar } from 'react-native'
 import Amplify from '@aws-amplify/core'
-import {Authenticator} from 'aws-amplify-react-native'
+import { withAuthenticator, Authenticator } from 'aws-amplify-react-native'
 import awsconfig from '../aws-exports'
+import SearchPage from './SearchPage'
 
 Amplify.configure({
-  ...awsconfig,
-  Analytics: {
-    disabled: true,
-  },
+    ...awsconfig,
+    Analytics: {
+        disabled: true,
+    },
 })
 
+
 const LoginPage = () => {
-  return (
-    <>
-      <StatusBar barStyle="dark-content" />
-      <Authenticator usernameAttributes="email" />
-    </>
-  )
+
+    
 }
 
-export default LoginPage
+
+
+
+
+export default withAuthenticator(LoginPage)
+               
