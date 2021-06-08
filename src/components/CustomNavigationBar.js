@@ -21,6 +21,7 @@ function CustomNavigationBar({ navigation, previous }) {
           <Menu.Item onPress={() => { console.log('Go to profile page here')}} title="See Your Profile" />
           <Menu.Item onPress={() => { navigation.navigate('ResSignUp')}} title="Create Restaurant Profile" />
           <Menu.Item onPress={() => { navigation.navigate('ResProfile')}} title="See Your Restaurant Profile" />
+          <Menu.Item onPress={() => { navigation.navigate('Location')}} title="See Your Location Here" />
         </Menu>
       ) : null}
     </Appbar.Header>

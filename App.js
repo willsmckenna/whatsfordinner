@@ -10,6 +10,7 @@ import LoginPage from './src/screens/LoginPage';
 import RestaurantSignUp from './src/screens/RestaurantSignUp';
 import RestaurantProfile from './src/screens/RestaurantProfile';
 import RestaurantDetail from './src/screens/RestaurantDetail';
+import LocationPage from './src/screens/LocationPage';
 import CustomNavigationBar from './src/components/CustomNavigationBar';
 import { DefaultTheme, Provider } from 'react-native-paper';
 import { faThumbsUp, faThumbsDown } from '@fortawesome/free-solid-svg-icons'
@@ -43,6 +44,7 @@ export default function App() {
           <Stack.Screen name="ResSignUp" component={RestaurantSignUp} />
           <Stack.Screen name="ResProfile" component={RestaurantProfile} />
           <Stack.Screen name="DetailPage" component={RestaurantDetail} />
+          <Stack.Screen name="Location" component={LocationPage} />
         </Stack.Navigator>
       </NavigationContainer>
     </Provider>
