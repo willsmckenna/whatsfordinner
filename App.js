@@ -16,6 +16,7 @@ import UserProfile from './src/screens/UserProfile';
 import ProfileAdd from './src/screens/ProfileAdd';
 import { DefaultTheme, Provider } from 'react-native-paper';
 import { faThumbsUp, faThumbsDown } from '@fortawesome/free-solid-svg-icons'
+import { withAuthenticator } from 'aws-amplify-react-native'
 
 library.add(faThumbsUp, faThumbsDown);
 
@@ -27,7 +28,7 @@ Sentry.init({
   debug: true, // Sentry will try to print out useful debugging information if something goes wrong with sending an event. Set this to `false` in production.
 });
 
-export default function App() {
+function App() {
   const theme = {
     ...DefaultTheme,
     roundness: 2,
@@ -60,3 +61,4 @@ export default function App() {
   );
 }
 
+export default withAuthenticator(App)
