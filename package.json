@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@aws-amplify/core": "^3.8.23",
+    "@aws-sdk/client-cognito-identity-provider": "^3.18.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/free-regular-svg-icons": "^5.15.3",
     "@fortawesome/free-solid-svg-icons": "^5.15.3",

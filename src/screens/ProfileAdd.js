@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Text, TextInput, Button, View, StyleSheet } from 'react-native';
-import { createRestaurant } from '../graphql/mutations';
+import { createUserPreferences } from '../graphql/mutations';
 import Amplify, { API, graphqlOperation } from 'aws-amplify';
 import Auth from '@aws-amplify/auth';
 
@@ -11,11 +11,12 @@ const ProfileAdd = ({ navigation }) => {
         try {
             const { id, attributes: { email }} = await Auth.currentUserInfo();
             // also put current user's id in table- change to getting email address for look up. 
-            setUserDetail({...userDetail, userId: id, username: email });
+            setUserDetail({...userDetail, userId: id, username: email});
+            console.log(userDetail);
             //update table in Amplify api
-            await API.graphql(graphqlOperation(createRestaurant, {input: userDetail}));
+            await API.graphql(graphqlOperation(createUserPreferences, {input: userDetail}));
             //bring back to home/search page
-            navigation.navigate('Search');
+            navigation.navigate('UserProfilePage');
         } catch (err) {
             console.log('error creating restaurant:', err);
         }

@@ -7,38 +7,47 @@ import Amplify, { API, graphqlOperation } from 'aws-amplify';
 import ProfileDetails from '../components/ProfileDetails';
 
 const UserProfile = () => {
-    const [userDetails, setUserDetails] = useState([]);
+    const [userName, setUserName] = useState("");
+    const [foodList, setFoodList] = useState([]);
     const [errorMsg, setErrorMsg] = useState('');
 
-    useEffect(() => {
-        async function fetchProfileData() {
-            try {
-                const { id } = await Auth.currentUserInfo();
-                const userDetail = await API.graphql(graphqlOperation(listUserPreferences, {
-                    filter: {
-                        userId: { eq: id }
-                    }
-                }));
-                let useList = [];
-                const { data } = userDetail;
-                const userProfile = data.listUsers.items[0];
-                if (!userProfile) {
-                    setErrorMsg('You have not created a profile yet. Please create one.');
-                }
-                console.log(userProfile);
-                const { name, email,telephone,preferences,orders, reservations} = userProfile;
-                useList.push(name, email, telephone, preferences, orders, reservations );
-                setUserDetails(useList);
-            } catch (err) {
-                setErrorMsg('You have not created a profile yet. Please create one.');
-                console.log("error fetching data:" + JSON.stringify(err));
+    const getData = (id) => {
+        return API.graphql(graphqlOperation(listUserPreferences, {
+            filter: {
+                userId: { eq: id }
             }
-        }
-        fetchProfileData();
+        })).then(data => data);
+    }
+
+    useEffect(() => {
+        let mounted = true;
+       
+        let useList = []
+        
+        Auth.currentUserInfo().then(res => {
+            if (res == null){
+                setErrorMsg('Current user not found')
+            }
+            const { id } = res;
+            getData(id)
+                .then(res => {
+                    if (res == null){
+                        setErrorMsg('User profile not found, please add to your account')
+                    }
+                    if(mounted) {
+                        const userProfile = res.data.listUserPreferencess.items[0];
+                        const { username, foodPreferences } = userProfile;
+                        setUserName(username);
+                        setFoodList(foodPreferences);
+                    }
+                });
+        });        
+            return () => mounted = false;
     }, []);
+    
     return (
         <View>
-            {errorMsg ? <Text> {errorMsg} </Text> : <ProfileDetails useProfile={userDetails} />}
+            {userName !== "" && foodList.length !== 0 && <ProfileDetails userName={userName} foodList={foodList} />}     
         </View>
     );
 };

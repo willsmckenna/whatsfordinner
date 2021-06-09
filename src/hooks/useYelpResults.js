@@ -13,7 +13,7 @@ export default () => {
                 params: {
                     limit: 50,
                     term: searchTerm,
-                    location: 'chicago'
+                    location: 'Chicago'
                 }
             });
             if (randSearchList.includes(searchTerm)){

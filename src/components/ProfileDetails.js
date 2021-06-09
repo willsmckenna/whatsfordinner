@@ -2,16 +2,16 @@ import React from 'react';
 import { View, Text, StyleSheet, SafeAreaView } from 'react-native';
 import { ListItem } from "react-native-elements";
 
-const ProfileDetails = ({ userProfile }) => {
+const ProfileDetails = ({ userName, foodList }) => {
     return (
         <View>
-            <Text style={styles.heading}>Your Profile</Text>
+            <Text style={styles.heading}>Profile for: {userName}</Text>
+            <Text style={styles.smallText}>Food Preferences</Text>
             {
-                userProfile.map((l, i) => (
+                foodList.map((l, i) => (
                     <ListItem key={i} bottomDivider>
                         <ListItem.Content>
                             <ListItem.Title>{l}</ListItem.Title>
-                            <ListItem.Subtitle>{l.subtitle}</ListItem.Subtitle>
                         </ListItem.Content>
                     </ListItem>
                 ))
@@ -22,7 +22,7 @@ const ProfileDetails = ({ userProfile }) => {
 
 const styles = StyleSheet.create({
     heading: {
-        fontSize: 30,
+        fontSize: 20,
         fontWeight: "bold",
         paddingBottom: 20,
     },
@@ -52,6 +52,6 @@ const styles = StyleSheet.create({
         alignItems: "center",
     }
 });
-;
+
 
 export default ProfileDetails;

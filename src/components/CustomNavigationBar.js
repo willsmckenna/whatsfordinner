@@ -19,6 +19,7 @@ function CustomNavigationBar({ navigation, previous }) {
           }>
           <Menu.Item onPress={() => { navigation.navigate('Login');}} title="Log In" />
           <Menu.Item onPress={() => { navigation.navigate('UserProfilePage')}} title="See Your Profile" />
+          <Menu.Item onPress={() => { navigation.navigate('ProfileAdd')}} title="Add to Your Profile" />
           <Menu.Item onPress={() => { navigation.navigate('ResSignUp')}} title="Create Restaurant Profile" />
           <Menu.Item onPress={() => { navigation.navigate('ResProfile')}} title="See Your Restaurant Profile" />
         </Menu>
